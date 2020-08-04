@@ -20,7 +20,9 @@ function setup() {
 
 	//Create the Bodies Here.
 	ground1 = new Ground();
-	dustbin1 = new Dustbin();
+	dustbin1 = new Dustbin(400,630,100,20);
+	dustbin2 = new Dustbin(350,630,20,100);
+	dustbin3 = new Dustbin(500,630,20,100);
 	box1 = new Box(50,20,20,20);
 	ground = new Ground(400,height,800,20);
 
@@ -31,19 +33,22 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
+  background(0);
   dustbin1.display();
+  dustbin2.display();
+  dustbin3.display();
   box1.display();
   ground.display();
-  background(0);
-  keyPressed();
+  
+  
   
   drawSprites();
  
 }
 
 function keyPressed() {
-	if(KeyCode == UP_ARROW) {
-		Matter.Body.applyForce(paperObject.body, paperObject.body.position, {x:85, y:-85});
+	if(keyCode == UP_ARROW) {
+		Matter.Body.applyForce(box1.body, box1.body.position, {x:17, y:-17});
 	}
 }
 

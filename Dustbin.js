@@ -1,5 +1,5 @@
     class Dustbin {
-    constructor() {
+    constructor(x, y, width, height) {
       var options = {
           'restitution':0.8,
           'friction':0.3,
@@ -11,9 +11,7 @@
       
       World.add(world, this.body);
 
-      line1 = createSprite(400,720,100,20);
-      line2 = createSprite(300,720,20,100);
-      line3 = createSprite(500,720,20,100);
+      
 
     }
     display(){
@@ -27,9 +25,6 @@
       stroke("green");
       fill("red");
       rect(0, 0, this.width, this.height);
-      line1.display();
-      line2.display();
-      line3.display();
       pop();
     }
   };
